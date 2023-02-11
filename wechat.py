@@ -1,10 +1,8 @@
 import uiautomator2 as u2
 import pandas as pd
 import time
-import weditor
-# https://blog.csdn.net/weixin_41579433/article/details/120363899
 
-# 通过wifi连接
+# 通过USB连接
 d = u2.connect_usb('a0029b1a')
 
 # 添加好友
@@ -70,7 +68,7 @@ def main():
     data.drop_duplicates('company', inplace=True)
     data.reset_index()
     # 自定义添加好友语句
-    text = '老板开工大吉,我是做自动门的'
+    text = '老板你好,我是专业做各种自动门、防火门、卷帘门的'
     for i in range(len(data['tel'])):
         tel = str(data['tel'][i])
         company = str(data['company'][i])
