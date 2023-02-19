@@ -1,7 +1,7 @@
 import uiautomator2 as u2
 import pandas as pd
 import time
-import pyautogui
+# 爸
 
 # 通过USB连接
 d = u2.connect_usb('a0029b1a')
@@ -67,15 +67,14 @@ def addfriend(tel, company, text, i):
         null = i
         return null
 
-
 # 读取文件中的微信账号
 def main():
-    data = pd.read_csv('name.csv',encoding='utf-8')
+    data = pd.read_csv('name1.csv',encoding='utf-8',)
     # 以company列 删除重复行
     data.drop_duplicates('company', inplace=True)
     data.reset_index()
     # 自定义添加好友语句
-    text = '老板你好'
+    text = '老板您好,我是专业做各种自动门、防火门、卷帘门的希望能有机会与您合作'
     for i in range(len(data['tel'])):
         tel = str(data['tel'][i])
         company = str(data['company'][i])+'-**'
@@ -84,5 +83,5 @@ def main():
             data.drop(result, inplace=True)
         except:
             pass
-        data.to_csv('name.csv', index=False)
+        data.to_csv('name1.csv', index=False)
 main()
